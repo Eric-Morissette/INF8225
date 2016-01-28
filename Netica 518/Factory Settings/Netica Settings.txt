@@ -1,0 +1,17 @@
+
+// ------------- NETICA SETTINGS -------------
+// This file is read by Netica at startup to set user preferences.  You may edit it to change Netica's behaviour.
+// It must be named "Netica Settings.txt" and be located in Netica's home directory (i.e. the directory with the executable Netica.exe or Netica32.exe).
+// If you wish to restore it to original, replace this file with the one of the same name in the "Factory Settings" folder (located in Netica's home directory).
+// Lines preceeded with a double slash // are ignored.
+// NOTE:  Values in this file may be overriden by those in the file "Netica Settings New.txt" (in the same directory), if it exists.
+// This file is never modified by Netica, but "Netica Settings New.txt" may be.
+// If you wish some aspect of Netica's behaviour to be controlled by this file, please contact  support@norsys.com
+
+// Show_memory_amounts_in_mebibytes        // use kibibytes (1 KiB = 1024 bytes), mebibytes, gibibytes, etc instead of kilobytes (1 KB = 1000 bytes), megabytes, etc.
+
+HedLocalUrl = "http://localhost:8000/"
+
+// HedFtpUrl = "devftp.hed.cc"
+// HedFtpUrl = "ftpdev.hed.cc"
+
