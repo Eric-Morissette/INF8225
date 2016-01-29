@@ -41,7 +41,7 @@ fprintf('Il n''y a aucuns changements pour F sachant B car B et F ne sont pas de
 
 clampled = sparsevec([B G],2,5);
 F_Sachant_B_G = tabularFactorCondition(joint, F, clampled);
-fprintf('F Sachant (B et G): p(F|B=1,G=1)=%f\n', F_Sachant_B_G.T(1));
+fprintf('F Sachant  B  G): p(F|B=1,G=1)=%f\n', F_Sachant_B_G.T(1));
 fprintf('En fixant G _et_ B, on peut voir la probabilite de F augmenter par un ''Explaining Away''\n\n\n');
 
 
