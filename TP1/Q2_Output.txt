@@ -1,0 +1,22 @@
+TP1 - Question 2:
+
+ [C]   [T]
+   \   /|
+    [A] |
+   /   \|
+ [M]   [J]
+
+(C) - Marginales Conditionnelles
+C Sachant !M  J: p(C=1|M=1,J=0)=0.008337
+C Sachant !M  J: p(C=1|M=0,J=1)=0.044852
+C Sachant  M  J: p(C=1|M=1,J=1)=0.445950
+C Sachant !M !J: p(C=1|M=0,J=0)=0.000110
+C Sachant  M   : p(C=1|M=1)    =0.016284
+C Sachant     J: p(C=1|J=1)    =0.235300
+
+(D) - Marginales Inconditionnelles
+C: p(C=1)=0.001000
+T: p(T=1)=0.002000
+A: p(A=1)=0.002516
+M: p(M=1)=0.052139
+J: p(J=1)=0.001994

@@ -1,0 +1,35 @@
+TP1 - Question 1:
+
+ [B]   [F]
+   \   /
+    [G]
+   /   \
+ [D]   [FT]
+
+(1): Explaining Away
+F Sachant !B: p(F|B=0)=0.100000
+F Sachant  B: p(F|B=1)=0.100000
+Il n'y a aucuns changements pour F sachant B car B et F ne sont pas dependants
+
+F Sachant (B et G): p(F|B=1,G=1)=0.027027
+En fixant G _et_ B, on peut voir la probabilite de F augmenter par un 'Explaining Away'
+
+
+(2): Serial Blocking
+D Sachant !B: p(D|B=0)=0.902500
+D Sachant  B: p(D|B=1)=0.765000
+On voit que B influence D
+
+D Sachant !B !G: p(D|B=0, G=0)=0.950000
+D Sachant  B !G: p(D|B=1, G=0)=0.950000
+On voit que G bloque l'influence de B sur G
+
+
+(3): Divergent Blocking
+FT Sachant !D: p(FT|D=0)=0.446292
+FT Sachant  D: p(FT|D=1)=0.571525
+On voit que D influence FT
+
+FT Sachant  D  G: p(FT|D=0,G=0)=0.200000
+FT Sachant  D !G: p(FT|D=1,G=0)=0.200000
+On voit que G bloque l'influence de D sur FT
