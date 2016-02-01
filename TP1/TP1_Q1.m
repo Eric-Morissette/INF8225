@@ -41,7 +41,7 @@ fprintf('Il n''y a aucuns changements pour F sachant B car B et F ne sont pas de
 
 clampled = sparsevec([B G],2,5);
 F_Sachant_B_G = tabularFactorCondition(joint, F, clampled);
-fprintf('F Sachant  B  G): p(F|B=1,G=1)=%f\n', F_Sachant_B_G.T(1));
+fprintf('F Sachant  B  G): p(F|B=1, G=1)=%f\n', F_Sachant_B_G.T(1));
 fprintf('En fixant G _et_ B, on peut voir la probabilite de F augmenter par un ''Explaining Away''\n\n\n');
 
 
@@ -77,10 +77,10 @@ fprintf('On voit que D influence FT\n\n');
 
 clampled = sparsevec([D G],1,5);
 FT_Sachant_D_G = tabularFactorCondition(joint, FT, clampled);
-fprintf('FT Sachant  D  G: p(FT|D=0,G=0)=%f\n',FT_Sachant_D_G.T(1));
+fprintf('FT Sachant  D  G: p(FT|D=0, G=0)=%f\n',FT_Sachant_D_G.T(1));
 
 clampled = sparsevec([D G],[2 1],5);
 FT_Sachant_D_G = tabularFactorCondition(joint, FT, clampled);
-fprintf('FT Sachant  D !G: p(FT|D=1,G=0)=%f\n',FT_Sachant_D_G.T(1));
+fprintf('FT Sachant  D !G: p(FT|D=1, G=0)=%f\n',FT_Sachant_D_G.T(1));
 fprintf('On voit que G bloque l''influence de D sur FT\n');
 

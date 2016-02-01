@@ -4,7 +4,7 @@ function b = pmtkGraphIsDag(adj_mat)
 % This file is from pmtk3.googlecode.com
 
 
-if bioinfoToolboxInstalled()
+if 0
     b = graphisdag(sparse(adj_mat));
 else
     adj_mat = double(adj_mat);
