@@ -18,12 +18,13 @@ X               = documents;
 X               = [X; ones(1, 16242)];
 rate_Learning   = 0.0005;
 
-% Split the data into Learning, Validation and Test data
-[X_Learning, X_Validation, X_Test, Y_Learning, Y_Validation, Y_Test] = create_train_valid_test_splits(X, Y);
 
 %%%%%%%%%%%%%%%%%%%%%
 %       Batch       %
 %%%%%%%%%%%%%%%%%%%%%
+% Split the data into Learning, Validation and Test data
+[X_Learning, X_Validation, X_Test, Y_Learning, Y_Validation, Y_Test] = create_train_valid_test_splits(X, Y);
+
 batch = Y_Learning' * X_Learning';
 
 itr = 0;
@@ -32,7 +33,7 @@ precision_Learning      = [];
 precision_Validation    = [];
 logLikelihood_Batch     = [];
 
-loglikelihoodDifference = 2;
+loglikelihoodDifference = 10;
 while abs(loglikelihoodDifference) > 1
 	% Compute LogLikelihood
     tempLogLikelihood       = sum((sum( ( ( Y_Validation * theta) .* X_Validation')' )) - (log(sum( exp( eye(4) * theta * X_Validation) ))));
@@ -57,6 +58,9 @@ fprintf('Precision of the batch descent with test data = %f\n', precision(X_Test
 %%%%%%%%%%%%%%%%%%%%%
 %     Mini-Batch    %
 %%%%%%%%%%%%%%%%%%%%%
+% Split the data into Learning, Validation and Test data
+[X_Learning, X_Validation, X_Test, Y_Learning, Y_Validation, Y_Test] = create_train_valid_test_splits(X, Y);
+
 theta                           = rand(4, 101) - 0.5;
 miniBatchSize                   = 568;
 alpha                           = 0.6;
@@ -66,7 +70,7 @@ logLikelihood                   = -realmax;
 logLikelihood_MiniBatch         = [];
 precision_Validation_MiniBatch  = [];
 precision_Learning_MiniBatch    = [];
-delta                           = 1;
+delta                           = 0;
 
 converged = false;
 while ~converged
@@ -88,7 +92,7 @@ while ~converged
 
         precision_Validation_MiniBatch = [precision_Validation_MiniBatch precision(X_Validation, Y_Validation, theta)];
 
-        if abs(delta) < 0.0001
+        if abs(delta) < 0.001
             converged = true;
             break;
         end
@@ -101,6 +105,10 @@ x3 = 1:itr;
 
 fprintf('Precision of the mini-batch descent with test data = %f\n', precision(X_Test, Y_Test, theta));
 
+
+%%%%%%%%%%%%%%%%%%%%%
+%      Analysis     %
+%%%%%%%%%%%%%%%%%%%%%
 figure();
 plot(x1, logLikelihood_Batch, x2, logLikelihood_MiniBatch);
 title('LogLikelihood in relation with the iteration');

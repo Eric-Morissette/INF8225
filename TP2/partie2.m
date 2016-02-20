@@ -92,12 +92,12 @@ ylabel( 'Occurrences' );
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %    Mini-Batch with Regularization    %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%theta           = rand(4, 201) - 0.5;
+theta           = rand(4, 201) - 0.5;
 miniBatchSize   = 568;
 alpha           = 0.6;
 thetaDifference = zeros(4, 201);
-lambda1         = 0.016;
-lambda2         = 0.046;
+lambda1         = 0.015;
+lambda2         = 0.050;
 itr             = 0;
 logLikelihood   = -realmax;
 
